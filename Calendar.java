@@ -5,7 +5,7 @@ public class Calendar {
     // Starting the calendar on 1/1/user given year
 	static int dayOfMonth = 1;   
 	static int month = 1;
-	static int year = 1990;
+	static int year = 1900;
 	static int dayOfWeek = 2;     // 1.1.1900 was a Monday
 	static int nDaysInMonth = 31; // Number of days in January
 	/** 
@@ -53,7 +53,7 @@ public class Calendar {
 	 // Side effects: changes the static variables dayOfMonth, month, year, dayOfWeek, nDaysInMonth.
 	 private static void advance() {
 		// if it's the last day of the month
-		if (dayOfMonth == nDaysInMonth(dayOfMonth, year)) {
+		if (dayOfMonth == nDaysInMonth(month, year)) {
 			// if it's the last month of the year: advance year, bring month to january and set day of the month back to 1
 			if (month == 12) {
 				year++;

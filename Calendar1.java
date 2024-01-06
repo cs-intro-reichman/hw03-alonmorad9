@@ -48,7 +48,7 @@ public class Calendar1 {
 	 // Side effects: changes the static variables dayOfMonth, month, year, dayOfWeek, nDaysInMonth.
 	 private static void advance() {
 		// if it's the last day of the month
-		if (dayOfMonth == nDaysInMonth(dayOfMonth, year)) {
+		if (dayOfMonth == nDaysInMonth(month, year)) {
 			// if it's the last month of the year: advance year, bring month to january and set day of the month back to 1
 			if (month == 12) {
 				year++;
@@ -92,12 +92,12 @@ public class Calendar1 {
 	private static int nDaysInMonth(int month, int year) {
 		switch (month) {
 			// feb has 29 days in leap year, 28 in common year
-			case 2: 
-			if (isLeapYear(year)) {
+			case 2: if (isLeapYear(year)) {
 				return 29;
 			}
-			else
+			else {
 			return 28;
+			}
 			case 4: return 30;
 			case 6: return 30;
 			case 9: return 30;
