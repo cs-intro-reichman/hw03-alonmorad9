@@ -8,7 +8,7 @@ public class Calendar1 {
 	static int year = 1900;
 	static int dayOfWeek = 2;     // 1.1.1900 was a Monday
 	static int nDaysInMonth = 31; // Number of days in January
-	static int sundaysfellCount = 0;
+	static int sundaysfellCount = 0; // counter of sundays that are both the first day of the week and first day of the month
 	/** 
 	 * Prints the calendars of all the years in the 20th century. Also prints the  
 	 * number of Sundays that occured on the first day of the month during this period.
@@ -18,8 +18,7 @@ public class Calendar1 {
 	    // Prints each date dd/mm/yyyy in a separate line. If the day is a Sunday, prints "Sunday".
 	    // The following variable, used for debugging purposes, counts how many days were advanced so far.
 	    int debugDaysCounter = 0; 
-	    //// Write the necessary initialization code, and replace the condition
-	    //// of the while loop with the necessary condition 
+	    // advances the date as long as the year is smaller than 2000
 	 	while (year < 2000) {
 			// if it's first day of the week print sunday after the date
 			if (dayOfWeek == 1) {
@@ -29,9 +28,11 @@ public class Calendar1 {
 			else
 			System.out.println(dayOfMonth + "/" + month + "/" + year);
 
+			// if the day is both first in the week and first in the month add 1 to counter
 			if (dayOfWeek == 1 & dayOfMonth == 1) {
 				sundaysfellCount++;
-			}		
+			}
+			// runs the fucntion that advances the date		
 	 		advance();
 	 		debugDaysCounter++;
 	 		//// If you want to stop the loop after n days, replace the condition of the
@@ -47,7 +48,7 @@ public class Calendar1 {
 	 // If the month changes, sets the number of days in this month.
 	 // Side effects: changes the static variables dayOfMonth, month, year, dayOfWeek, nDaysInMonth.
 	 private static void advance() {
-		// if it's the last day of the month
+		// if it's the last day of the month : check the cases inside
 		if (dayOfMonth == nDaysInMonth(month, year)) {
 			// if it's the last month of the year: advance year, bring month to january and set day of the month back to 1
 			if (month == 12) {

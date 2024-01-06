@@ -2,24 +2,22 @@
  * Prints the calendar of the user given year.
  */
 public class Calendar {	
-    // Starting the calendar on 1/1/user given year
+    // Starting the calendar on 1/1/1900
 	static int dayOfMonth = 1;   
 	static int month = 1;
 	static int year = 1900;
 	static int dayOfWeek = 2;     // 1.1.1900 was a Monday
 	static int nDaysInMonth = 31; // Number of days in January
 	/** 
-	 * Prints the calendars of all the years in the 20th century. Also prints the  
-	 * number of Sundays that occured on the first day of the month during this period.
+	 * Prints the calendar of the user given year.
 	 */
 	public static void main(String args[]) {
 		// Advances the date and the day-of-the-week from 1/1/1900 till 31/12/1999, inclusive.
-	    // Prints each date dd/mm/yyyy in a separate line. If the day is a Sunday, prints "Sunday".
 	    // The following variable, used for debugging purposes, counts how many days were advanced so far.
 	    int debugDaysCounter = 0;
         int yearUsergiven = Integer.parseInt(args[0]); 
-	    //// Write the necessary initialization code, and replace the condition
-	    //// of the while loop with the necessary condition 
+		// advances the date as long as the year is smaller than the user given year
+		// no need to print
 	 	while (year < yearUsergiven) {
             advance();
 	 		debugDaysCounter++;
@@ -29,7 +27,9 @@ public class Calendar {
 	 			break;
 	 		}
         }
+		// sets year as the user given year, in order of the fucntion 'advance' to work properly without changing the varibales name in it
         year = yearUsergiven;
+		// advances the date until the year finishes
         while (year < yearUsergiven + 1) {
 			// if it's first day of the week print sunday after the date
 			if (dayOfWeek == 1) {
@@ -52,7 +52,7 @@ public class Calendar {
 	 // If the month changes, sets the number of days in this month.
 	 // Side effects: changes the static variables dayOfMonth, month, year, dayOfWeek, nDaysInMonth.
 	 private static void advance() {
-		// if it's the last day of the month
+		// if it's the last day of the month : check the cases inside
 		if (dayOfMonth == nDaysInMonth(month, year)) {
 			// if it's the last month of the year: advance year, bring month to january and set day of the month back to 1
 			if (month == 12) {
