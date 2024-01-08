@@ -11,6 +11,11 @@ public class UniqueChars {
      * unless they are space characters.
      */
     public static String uniqueChars(String s) {
+        /**
+        #Feedback: I suggest not to use -emptyString- as name because in the next function, you calculate some things to this variable.
+        So the "return emptyString" is not clearly. 
+        try to use "calculatedString" or "newString"
+            */
         String emptyStr = "";
         // varibale that keeps the char at the current i
         // starting from 0 placement in the string

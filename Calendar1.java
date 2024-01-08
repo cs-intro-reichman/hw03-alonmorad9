@@ -99,6 +99,14 @@ public class Calendar1 {
 			else {
 			return 28;
 			}
+				/**
+    #Feedback : you can do 
+
+	case 4: 
+	case 6: 
+	case 9: 
+		return 30;
+				**/
 			case 4: return 30;
 			case 6: return 30;
 			case 9: return 30;
