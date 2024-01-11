@@ -99,10 +99,11 @@ public class Calendar1 {
 			else {
 			return 28;
 			}
-			case 4: return 30;
-			case 6: return 30;
-			case 9: return 30;
-			case 11: return 30;
+			case 4:
+			case 6: 
+			case 9:
+			case 11:
+					return 30;
 			// all other months (default) have 31 days
 			default: return 31;
 		}

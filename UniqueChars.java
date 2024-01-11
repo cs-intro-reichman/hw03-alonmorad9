@@ -11,7 +11,7 @@ public class UniqueChars {
      * unless they are space characters.
      */
     public static String uniqueChars(String s) {
-        String emptyStr = "";
+        String calculatedString = "";
         // varibale that keeps the char at the current i
         // starting from 0 placement in the string
         char charAti = s.charAt(0);
@@ -21,13 +21,13 @@ public class UniqueChars {
             charAti = s.charAt(i);
             // adds all space chars to the new string 
             if (charAti == 32) {
-                emptyStr = emptyStr + charAti;
+                calculatedString = calculatedString + charAti;
             }
             // removes duplicates from the string unless it's space char
             else if (s.indexOf(charAti) == i) {
-                emptyStr = emptyStr + charAti;
+                calculatedString = calculatedString + charAti;
             }
         }
-        return emptyStr;
+        return calculatedString;
     }
 }
